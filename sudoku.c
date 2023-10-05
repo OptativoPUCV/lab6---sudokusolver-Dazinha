@@ -203,9 +203,10 @@ Node* DFS(Node* initial, int* cont){
 
   while (!is_empty(pila)) 
   { 
+    (*cont)++;
     //Saque y elimine el primer nodo de S.
     Node* current = top(pila); 
-    (*cont)++;
+    pop(pila);
 
 //Verifique si corresponde a un estado final, si es así retorne el nodo.
     if (is_final(current)) 
