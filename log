@@ -120,3 +120,15 @@ sudoku.c:176:13: error: unused variable ‘primer’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 8a62763
+Thu 05 Oct 2023 07:48:05 PM UTC: 
+ sudoku.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_final’:
+sudoku.c:132:26: error: ‘list’ undeclared (first use in this function); did you mean ‘List’?
+  132 |                 pushBack(list, ady_node);
+      |                          ^~~~
+      |                          List
+sudoku.c:132:26: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+9c8c0a3
