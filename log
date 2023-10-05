@@ -277,3 +277,35 @@ Thu 05 Oct 2023 08:01:48 PM UTC:
  tests:  4|3
 total_score: 30/70
 0d3734e
+Thu 05 Oct 2023 09:28:57 PM UTC: 
+ sudoku.c | 36 ++++++++++++++++++++++++++++++++++++
+ 1 file changed, 36 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:125:17: error: ‘row_check’ undeclared (first use in this function)
+  125 |             if (row_check[i][num] == 1) {
+      |                 ^~~~~~~~~
+sudoku.c:125:17: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:130:17: error: ‘col_check’ undeclared (first use in this function); did you mean ‘column_check’?
+  130 |             if (col_check[j][num] == 1) {
+      |                 ^~~~~~~~~
+      |                 column_check
+sudoku.c:136:17: error: ‘subgrid_check’ undeclared (first use in this function); did you mean ‘submatriz_check’?
+  136 |             if (subgrid_check[subgrid_index][num] == 1) {
+      |                 ^~~~~~~~~~~~~
+      |                 submatriz_check
+sudoku.c:135:17: error: variable ‘subgrid_index’ set but not used [-Werror=unused-but-set-variable]
+  135 |             int subgrid_index = i / 3 * 3 + j / 3;
+      |                 ^~~~~~~~~~~~~
+sudoku.c:113:7: error: unused variable ‘submatriz_check’ [-Werror=unused-variable]
+  113 |   int submatriz_check[9][10] = {0}; // 9 submatrices de 3x3 x 10 números (0-9)
+      |       ^~~~~~~~~~~~~~~
+sudoku.c:112:7: error: unused variable ‘column_check’ [-Werror=unused-variable]
+  112 |   int column_check[9][10] = {0}; // 9 columnas x 10 números (0-9)
+      |       ^~~~~~~~~~~~
+sudoku.c:111:7: error: unused variable ‘filas_check’ [-Werror=unused-variable]
+  111 |   int filas_check[9][10] = {0}; // 9 filas x 10 números (0-9)
+      |       ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+98eefb9
