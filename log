@@ -362,3 +362,22 @@ sudoku.c:113:7: error: unused variable ‘submatriz_check’ [-Werror=unused-var
 cc1: all warnings being treated as errors
 Compilation failed
 3d40c75
+Thu 05 Oct 2023 09:31:53 PM UTC: 
+ sudoku.c | 25 ++++++++++++++-----------
+ 1 file changed, 14 insertions(+), 11 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:146:7: error: ‘row_check’ undeclared (first use in this function)
+  146 |       row_check[i][num] = 1;
+      |       ^~~~~~~~~
+sudoku.c:146:7: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:147:13: error: ‘col_check’ undeclared (first use in this function); did you mean ‘fila_check’?
+  147 |             col_check[j][num] = 1;
+      |             ^~~~~~~~~
+      |             fila_check
+sudoku.c:148:13: error: ‘subgrid_check’ undeclared (first use in this function); did you mean ‘submatriz_check’?
+  148 |             subgrid_check[subgrid_index][num] = 1;
+      |             ^~~~~~~~~~~~~
+      |             submatriz_check
+Compilation failed
+641da6e

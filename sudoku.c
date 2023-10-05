@@ -108,8 +108,8 @@ typedef struct n{
 */
 
 int is_valid(Node* n){
-  int filas_check[9][10] = {0}; 
-  int column_check[9][10] = {0}; 
+  int fila_check[9][10] = {0}; 
+  int columna_check[9][10] = {0}; 
   int submatriz_check[9][10] = {0}; 
 
   for (int i = 0; i < 3; i++) 
@@ -120,27 +120,30 @@ int is_valid(Node* n){
       
       if (num < 1 || num > 9)
       {
-        return 0; // No es válido
+        return 0; 
       }
 
-            // Verificar si el número ya ha aparecido en la fila
-      if (filas_check[i][num] == 1) 
+
+      if (fila_check[i][num] == 1) 
       {
-        return 0; // No es válido
+        return 0; 
       }
 
 
-      if (column_check[j][num] == 1) 
+      if (columna_check[j][num] == 1) 
       {
-        return 0; // No es válido
+        return 0; 
       }
-            int subgrid_index = i / 3 * 3 + j / 3;
-            if (subgrid_check[subgrid_index][num] == 1) {
-                return 0; // No es válido
-            }
+      
+      int subgrid_index = i / 3 * 3 + j / 3;
+      
+      if (submatriz_check[subgrid_index][num] == 1) 
+      {
+        return 0; 
+      }
 
-            // Marcar el número como encontrado en fila, columna y submatriz
-            row_check[i][num] = 1;
+
+      row_check[i][num] = 1;
             col_check[j][num] = 1;
             subgrid_check[subgrid_index][num] = 1;
         }
