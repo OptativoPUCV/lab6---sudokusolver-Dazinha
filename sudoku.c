@@ -116,24 +116,24 @@ int is_valid(Node* n){
   {
     for (int j = 0; j < 3; j++) 
     {
-            int num = n->sudo[i][j];
-
-            // Verificar si el número está dentro del rango válido (1-9)
-            if (num < 1 || num > 9) {
-                return 0; // No es válido
-            }
+      int num = n->sudo[i][j];
+      
+      if (num < 1 || num > 9)
+      {
+        return 0; // No es válido
+      }
 
             // Verificar si el número ya ha aparecido en la fila
-            if (row_check[i][num] == 1) {
-                return 0; // No es válido
-            }
+      if (filas_check[i][num] == 1) 
+      {
+        return 0; // No es válido
+      }
 
-            // Verificar si el número ya ha aparecido en la columna
-            if (col_check[j][num] == 1) {
-                return 0; // No es válido
-            }
 
-            // Verificar si el número ya ha aparecido en la submatriz
+      if (column_check[j][num] == 1) 
+      {
+        return 0; // No es válido
+      }
             int subgrid_index = i / 3 * 3 + j / 3;
             if (subgrid_check[subgrid_index][num] == 1) {
                 return 0; // No es válido

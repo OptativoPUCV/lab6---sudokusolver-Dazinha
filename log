@@ -336,3 +336,29 @@ sudoku.c:111:7: error: unused variable ‘filas_check’ [-Werror=unused-variabl
 cc1: all warnings being treated as errors
 Compilation failed
 9c1dcef
+Thu 05 Oct 2023 09:30:56 PM UTC: 
+ sudoku.c | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:140:17: error: ‘subgrid_check’ undeclared (first use in this function); did you mean ‘submatriz_check’?
+  140 |             if (subgrid_check[subgrid_index][num] == 1) {
+      |                 ^~~~~~~~~~~~~
+      |                 submatriz_check
+sudoku.c:140:17: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:145:13: error: ‘row_check’ undeclared (first use in this function)
+  145 |             row_check[i][num] = 1;
+      |             ^~~~~~~~~
+sudoku.c:146:13: error: ‘col_check’ undeclared (first use in this function); did you mean ‘column_check’?
+  146 |             col_check[j][num] = 1;
+      |             ^~~~~~~~~
+      |             column_check
+sudoku.c:139:17: error: variable ‘subgrid_index’ set but not used [-Werror=unused-but-set-variable]
+  139 |             int subgrid_index = i / 3 * 3 + j / 3;
+      |                 ^~~~~~~~~~~~~
+sudoku.c:113:7: error: unused variable ‘submatriz_check’ [-Werror=unused-variable]
+  113 |   int submatriz_check[9][10] = {0};
+      |       ^~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+3d40c75
