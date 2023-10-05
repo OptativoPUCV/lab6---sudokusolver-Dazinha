@@ -108,9 +108,9 @@ int is_valid(Node* n){
   int columna[9][10] = {0}; 
   int submatriz[9][10] = {0}; 
 
-  for (int i = 0; i < 9; i++) 
+  for (int i = 0; i < 3; i++) 
   {
-    for (int j = 0; j < 9; j++) 
+    for (int j = 0; j < 3; j++) 
     {
       int num = n -> sudo[i][j];
       
