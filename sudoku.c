@@ -128,14 +128,14 @@ int is_final(Node* n){
     {
       for (int j = 0 ; j < 3 ; j++)
         {
-          if (aux_node -> sudo[i][j] != 0) //si son distintos a 0
+          if (aux_node -> sudo[i][j] == 0) //si son distintos a 0
           {
-            return 1;
+            return 0;
           }
         }
     }
   
-    return 0;
+    return 1;
 }
 
 /*
