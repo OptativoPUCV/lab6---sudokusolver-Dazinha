@@ -75,7 +75,11 @@ List* get_adj_nodes(Node* n){
                 Node *ady_node = copy(aux_node);
                 ady_node -> sudo[i][j] = k; //cambio el 0
 
-                pushBack(list, ady_node);
+                if (is_valid(ady_node))
+                {
+                  pushBack(list, ady_node);
+                }
+                
               }
           }
         }
@@ -109,6 +113,8 @@ int is_valid(Node* n){
 }
 
 /*
+3.Modifique la función *get_adj_nodes* para que sólo los nodos válidos sean retornados (use la función *is_valid*).
+
 4.Implemente la función **int is_final(Node * n)**. Esta función retorna 1 si el nodo corresponde a un nodo final (es decir, todos los valores de la matriz son distintos a 0) y 0 en caso contrario.
 */
 
@@ -120,7 +126,7 @@ int is_final(Node* n){
     {
       for (int j = 0 ; j < 3 ; j++)
         {
-          if (aux_node -> sudo[i][j] != 0) //si tengo un 0
+          if (aux_node -> sudo[i][j] != 0) //si son distintos a 0
           {
             return 1;
           }
