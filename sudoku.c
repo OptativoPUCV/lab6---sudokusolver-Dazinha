@@ -66,6 +66,10 @@ List* get_adj_nodes(Node* n){
     {
       for (int j = 0 ; j < 3 ; j++)
         {
+          if (sudo[i][j] == 0)
+          {
+            
+    
             for (int k = 1 ; k < 9 ; k++)
               {
                 
@@ -74,7 +78,7 @@ List* get_adj_nodes(Node* n){
 
                 pushBack(list, ady_node);
               }
-          
+          }
         }
     }
 
