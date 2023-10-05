@@ -132,3 +132,9 @@ sudoku.c:132:26: error: ‘list’ undeclared (first use in this function); did 
 sudoku.c:132:26: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 9c8c0a3
+Thu 05 Oct 2023 07:49:26 PM UTC: 
+ sudoku.c | 12 ++----------
+ 1 file changed, 2 insertions(+), 10 deletions(-)
+ tests:  2|4
+total_score: 15/70
+0d62d73

@@ -114,23 +114,15 @@ int is_valid(Node* n){
 
 int is_final(Node* n){
 
-    Node *aux_node  = copy(n);
+  Node *aux_node  = copy(n);
 
   for (int i = 0 ; i < 3 ; i++)
     {
       for (int j = 0 ; j < 3 ; j++)
         {
-          if (aux_node -> sudo[i][j] == 0) //si tengo un 0
+          if (aux_node -> sudo[i][j] != 0) //si tengo un 0
           {
-            
-            for (int k = 1 ; k < 9 ; k++)
-              {
-                
-                Node *ady_node = copy(aux_node);
-                ady_node -> sudo[i][j] = k; //cambio el 0
-
-                pushBack(list, ady_node);
-              }
+            return 1;
           }
         }
     }
