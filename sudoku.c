@@ -143,16 +143,14 @@ int is_valid(Node* n){
       }
 
 
-      row_check[i][num] = 1;
-            col_check[j][num] = 1;
-            subgrid_check[subgrid_index][num] = 1;
-        }
+      fila_check[i][num] = 1;
+      columna_check[j][num] = 1;
+      submatriz_check[subgrid_index][num] = 1;
+      
     }
+  }
 
     return 1; 
-  
-  
-    return 1;
 }
 
 /*

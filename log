@@ -381,3 +381,9 @@ sudoku.c:148:13: error: ‘subgrid_check’ undeclared (first use in this functi
       |             submatriz_check
 Compilation failed
 641da6e
+Thu 05 Oct 2023 09:32:43 PM UTC: 
+ sudoku.c | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
+ tests:  3|3
+total_score: 25/70
+83731af
