@@ -54,7 +54,8 @@ Recuerde que los nodos adyacentes son generados aplicando las acciones al estado
 */
 
 List* get_adj_nodes(Node* n){
-    List* list=createList();
+  
+  List* list=createList();
   /*
     obtenga los nodos adyacentes a n
     y agréguelos a la lista
@@ -69,7 +70,7 @@ List* get_adj_nodes(Node* n){
           if (aux_node -> sudo[i][j] == 0) //si tengo un 0
           {
             
-            for (int k = 1 ; k < 9 ; k++)
+            for (int k = 1 ; k <= 9 ; k++)
               {
                 
                 Node *ady_node = copy(aux_node);
