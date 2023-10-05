@@ -222,8 +222,11 @@ Node* DFS(Node* initial, int* cont){
     
     while (adj_node != NULL) 
     {
-      push(pila, adj_node);
+      Node* vecino_node = (Node*)adj_node;
+      push(pila, vecino_node);
       adj_node = next(adj_nodes);
+
+
     }
 
     clean(adj_nodes);
