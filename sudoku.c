@@ -131,7 +131,7 @@ int is_valid(Node* n){
         return 0; 
       }
       
-      int submatriz_index = (i / 3) * 3 + (j / 3);
+      int submatriz_index = i / 3 * 3 + j / 3;
       
       if (submatriz[submatriz_index][num] == 1) 
       {
