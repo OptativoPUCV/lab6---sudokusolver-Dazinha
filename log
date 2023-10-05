@@ -90,3 +90,9 @@ sudoku.c:69:15: error: ‘sudo’ undeclared (first use in this function)
 sudoku.c:69:15: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 b9a9e40
+Thu 05 Oct 2023 07:34:01 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  2|4
+total_score: 15/70
+4bd1215

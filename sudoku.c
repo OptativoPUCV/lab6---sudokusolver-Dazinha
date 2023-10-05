@@ -66,7 +66,7 @@ List* get_adj_nodes(Node* n){
     {
       for (int j = 0 ; j < 3 ; j++)
         {
-          if (sudo[i][j] == 0)
+          if (aux_node -> sudo[i][j] == 0)
           {
             
     
