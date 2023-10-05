@@ -460,3 +460,23 @@ Thu 05 Oct 2023 09:51:42 PM UTC:
  tests:  3|3
 total_score: 25/70
 3894fb0
+Thu 05 Oct 2023 09:54:35 PM UTC: 
+ sudoku.c | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:78:21: error: implicit declaration of function ‘is_valid’ [-Werror=implicit-function-declaration]
+   78 |                 if (is_valid(ady_node))
+      |                     ^~~~~~~~
+sudoku.c:84:25: error: passing argument 1 of ‘clean’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+   84 |                   clean(ady_node);
+      |                         ^~~~~~~~
+      |                         |
+      |                         Node *
+In file included from test.c:4:
+list.h:13:18: note: expected ‘List *’ but argument is of type ‘Node *’
+   13 | void clean(List* list);
+      |            ~~~~~~^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+34ce54d
