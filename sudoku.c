@@ -59,7 +59,23 @@ List* get_adj_nodes(Node* n){
     obtenga los nodos adyacentes a n
     y agréguelos a la lista
   */
-    printf("Estoy listo!");
+
+  Node *aux_node  = copy(n);
+
+  for (int i = 0 ; i < 3 ; i++)
+    {
+      for (int j = 0 ; j < 3 ; j++)
+        {
+          if (aux_node -> sudo[i][j] == 0)
+          {
+            for (int k = 1 ; k < 9 ; k++)
+              {
+                Node *ady_node = copy(aux_node);
+              }
+          }
+        }
+    }
+
   
     return list;
 }

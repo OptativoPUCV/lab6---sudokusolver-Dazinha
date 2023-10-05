@@ -10,3 +10,22 @@ sudoku.c:96:5: note: previous definition of ‘main’ with type ‘int(int,  ch
       |     ^~~~
 Compilation failed
 0ce1a56
+Thu 05 Oct 2023 07:10:26 PM UTC: 
+ sudoku.c | 18 +++++++++++++++++-
+ 1 file changed, 17 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:73:23: error: unused variable ‘ady_node’ [-Werror=unused-variable]
+   73 |                 Node *ady_node = copy(aux_node);
+      |                       ^~~~~~~~
+test.c: At top level:
+test.c:245:5: error: redefinition of ‘main’
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+In file included from test.c:5:
+sudoku.c:112:5: note: previous definition of ‘main’ with type ‘int(int,  char **)’
+  112 | int main( int argc, char *argv[] ){
+      |     ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+80a0a4f
