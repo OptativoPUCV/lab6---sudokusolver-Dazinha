@@ -164,21 +164,35 @@ Almacene en la variable cont, la cantidad de iteraciones que realiza el algoritm
 */
 
 Node* DFS(Node* initial, int* cont){
-  //Cree un stack S (pila) e inserte el nodo.
-  /*
+Cree un stack S (pila) e inserte el nodo.
   Stack* pila = createStack();
 
   push(pila, initial);
 
+  while (!isEmpty(pila)) 
+  { 
+    Node* current = top(pila); 
+    (*cont)++; // Incrementar el contador de iteraciones
 
-  while (!isEmpty(pila))
+        // Verificar si el nodo actual es un estado final
+    if (is_final(current)) 
     {
-      //Saque y elimine el primer nodo de S.
-      Node* primer = pop(pila);
-
-      
+      return current; // Retornar el nodo actual si es un estado final
     }
-  */
+
+        // Obtener la lista de nodos adyacentes
+    List* adj_nodes = get_adj_nodes(current);
+
+        // Agregar los nodos adyacentes al stack
+    void* adj_node = first(adj_nodes);
+    while (adj_node != NULL) 
+    {
+      push(pila, adj_node);
+      adj_node = next(adj_nodes);
+    }
+
+  }
+
   return NULL;
   
 }
