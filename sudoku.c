@@ -71,6 +71,7 @@ List* get_adj_nodes(Node* n){
             for (int k = 1 ; k < 9 ; k++)
               {
                 Node *ady_node = copy(aux_node);
+                ady_node -> sudo[i][j] = k;
               }
           }
         }
