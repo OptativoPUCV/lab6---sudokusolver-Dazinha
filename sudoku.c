@@ -210,10 +210,11 @@ Node* DFS(Node* initial, int* cont){
 
   while (!is_empty(pila)) 
   { 
+    //Saque y elimine el primer nodo de S.
     Node* current = top(pila); 
     (*cont)++;
 
-
+//Verifique si corresponde a un estado final, si es así retorne el nodo.
     if (is_final(current)) 
     {
       return current; 
@@ -224,12 +225,14 @@ Node* DFS(Node* initial, int* cont){
 
     //Agregue los nodos de la lista (uno por uno) al stack S.
     void* adj_node = first(adj_nodes);
+    
     while (adj_node != NULL) 
     {
       push(pila, adj_node);
       adj_node = next(adj_nodes);
     }
 
+    free(current);
   }
 
   return NULL;
