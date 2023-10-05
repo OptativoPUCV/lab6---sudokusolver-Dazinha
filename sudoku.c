@@ -80,10 +80,7 @@ List* get_adj_nodes(Node* n){
                 {
                   pushBack(list, ady_node);
                 }
-                else
-                {
-                  clean(ady_node);
-                }
+                
                 
               }
           }

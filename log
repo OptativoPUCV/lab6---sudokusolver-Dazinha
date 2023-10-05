@@ -500,3 +500,14 @@ list.h:13:18: note: expected ‘List *’ but argument is of type ‘Node *’
 cc1: all warnings being treated as errors
 Compilation failed
 f58e518
+Thu 05 Oct 2023 09:57:43 PM UTC: 
+ sudoku.c | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:79:21: error: implicit declaration of function ‘is_valid’ [-Werror=implicit-function-declaration]
+   79 |                 if (is_valid(ady_node))
+      |                     ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+3f3d3d9
