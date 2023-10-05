@@ -309,3 +309,30 @@ sudoku.c:111:7: error: unused variable ‘filas_check’ [-Werror=unused-variabl
 cc1: all warnings being treated as errors
 Compilation failed
 98eefb9
+Thu 05 Oct 2023 09:29:24 PM UTC: 
+ sudoku.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:116:5: error: implicit declaration of function ‘dor’ [-Werror=implicit-function-declaration]
+  116 |     dor (int j = 0; j < 3; j++) {
+      |     ^~~
+sudoku.c:116:10: error: expected expression before ‘int’
+  116 |     dor (int j = 0; j < 3; j++) {
+      |          ^~~
+sudoku.c:116:32: error: expected ‘;’ before ‘{’ token
+  116 |     dor (int j = 0; j < 3; j++) {
+      |                                ^~
+      |                                ;
+sudoku.c:113:7: error: unused variable ‘submatriz_check’ [-Werror=unused-variable]
+  113 |   int submatriz_check[9][10] = {0};
+      |       ^~~~~~~~~~~~~~~
+sudoku.c:112:7: error: unused variable ‘column_check’ [-Werror=unused-variable]
+  112 |   int column_check[9][10] = {0};
+      |       ^~~~~~~~~~~~
+sudoku.c:111:7: error: unused variable ‘filas_check’ [-Werror=unused-variable]
+  111 |   int filas_check[9][10] = {0};
+      |       ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+9c1dcef

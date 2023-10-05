@@ -108,12 +108,14 @@ typedef struct n{
 */
 
 int is_valid(Node* n){
-  int filas_check[9][10] = {0}; // 9 filas x 10 números (0-9)
-  int column_check[9][10] = {0}; // 9 columnas x 10 números (0-9)
-  int submatriz_check[9][10] = {0}; // 9 submatrices de 3x3 x 10 números (0-9)
+  int filas_check[9][10] = {0}; 
+  int column_check[9][10] = {0}; 
+  int submatriz_check[9][10] = {0}; 
 
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
+  for (int i = 0; i < 3; i++) 
+  {
+    for (int j = 0; j < 3; j++) 
+    {
             int num = n->sudo[i][j];
 
             // Verificar si el número está dentro del rango válido (1-9)
