@@ -417,3 +417,13 @@ Thu 05 Oct 2023 09:46:32 PM UTC:
  tests:  3|3
 total_score: 25/70
 e64cb13
+Thu 05 Oct 2023 09:47:08 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:214:21: error: void value not ignored as it ought to be
+  214 |     Node* current = pop(pila);
+      |                     ^~~
+Compilation failed
+630dd8c
