@@ -108,13 +108,13 @@ typedef struct n{
 */
 
 int is_valid(Node* n){
-  int fila_check[9][10] = {0}; 
-  int columna_check[9][10] = {0}; 
-  int submatriz_check[9][10] = {0}; 
+  int fila[9][10] = {0}; 
+  int columna[9][10] = {0}; 
+  int submatriz[9][10] = {0}; 
 
-  for (int i = 0; i < 3; i++) 
+  for (int i = 0; i < 9; i++) 
   {
-    for (int j = 0; j < 3; j++) 
+    for (int j = 0; j < 9; j++) 
     {
       int num = n -> sudo[i][j];
       
@@ -124,28 +124,28 @@ int is_valid(Node* n){
       }
 
 
-      if (fila_check[i][num] == 1) 
+      if (fila[i][num] == 1) 
       {
         return 0; 
       }
 
 
-      if (columna_check[j][num] == 1) 
+      if (columna[j][num] == 1) 
       {
         return 0; 
       }
       
       int submatriz_index = i / 3 * 3 + j / 3;
       
-      if (submatriz_check[submatriz_index][num] == 1) 
+      if (submatriz[submatriz_index][num] == 1) 
       {
         return 0; 
       }
 
 
-      fila_check[i][num] = 1;
-      columna_check[j][num] = 1;
-      submatriz_check[submatriz_index][num] = 1;
+      fila[i][num] = 1;
+      columna[j][num] = 1;
+      submatriz[submatriz_index][num] = 1;
       
     }
   }
