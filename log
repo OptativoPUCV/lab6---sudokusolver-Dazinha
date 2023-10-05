@@ -229,3 +229,15 @@ sudoku.c:188:12: note: each undeclared identifier is reported only once for each
 cc1: all warnings being treated as errors
 Compilation failed
 1109af7
+Thu 05 Oct 2023 07:59:45 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:172:11: error: implicit declaration of function ‘isEmpty’; did you mean ‘is_empty’? [-Werror=implicit-function-declaration]
+  172 |   while (!isEmpty(pila))
+      |           ^~~~~~~
+      |           is_empty
+cc1: all warnings being treated as errors
+Compilation failed
+43d8503

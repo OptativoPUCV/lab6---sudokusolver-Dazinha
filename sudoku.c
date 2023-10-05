@@ -183,7 +183,7 @@ Node* DFS(Node* initial, int* cont){
     //Obtenga la lista de nodos adyacentes al nodo
     List* adj_nodes = get_adj_nodes(current);
 
-    Agregue los nodos de la lista (uno por uno) al stack S.
+    //Agregue los nodos de la lista (uno por uno) al stack S.
     void* adj_node = first(adj_nodes);
     while (adj_node != NULL) 
     {
