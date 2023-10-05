@@ -51,3 +51,13 @@ sudoku.c:115:5: note: previous definition of ‘main’ with type ‘int(int,  c
       |     ^~~~
 Compilation failed
 b3b8218
+Thu 05 Oct 2023 07:13:26 PM UTC: 
+test.c:245:5: error: redefinition of ‘main’
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+In file included from test.c:5:
+sudoku.c:115:5: note: previous definition of ‘main’ with type ‘int(int,  char **)’
+  115 | int main( int argc, char *argv[] ){
+      |     ^~~~
+Compilation failed
+11859cb
