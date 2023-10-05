@@ -180,10 +180,10 @@ Node* DFS(Node* initial, int* cont){
       return current; // Retornar el nodo actual si es un estado final
     }
 
-    Obtenga la lista de nodos adyacentes al nodo
+    //Obtenga la lista de nodos adyacentes al nodo
     List* adj_nodes = get_adj_nodes(current);
 
-        // Agregar los nodos adyacentes al stack
+    Agregue los nodos de la lista (uno por uno) al stack S.
     void* adj_node = first(adj_nodes);
     while (adj_node != NULL) 
     {

@@ -206,3 +206,26 @@ sudoku.c:187:28: note: each undeclared identifier is reported only once for each
 cc1: all warnings being treated as errors
 Compilation failed
 da12ac0
+Thu 05 Oct 2023 07:59:27 PM UTC: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:172:11: error: implicit declaration of function ‘isEmpty’; did you mean ‘is_empty’? [-Werror=implicit-function-declaration]
+  172 |   while (!isEmpty(pila))
+      |           ^~~~~~~
+      |           is_empty
+sudoku.c:186:5: error: unknown type name ‘Agregue’
+  186 |     Agregue los nodos de la lista (uno por uno) al stack S.
+      |     ^~~~~~~
+sudoku.c:186:17: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘nodos’
+  186 |     Agregue los nodos de la lista (uno por uno) al stack S.
+      |                 ^~~~~
+sudoku.c:188:12: error: ‘adj_node’ undeclared (first use in this function); did you mean ‘adj_nodes’?
+  188 |     while (adj_node != NULL)
+      |            ^~~~~~~~
+      |            adj_nodes
+sudoku.c:188:12: note: each undeclared identifier is reported only once for each function it appears in
+cc1: all warnings being treated as errors
+Compilation failed
+1109af7
