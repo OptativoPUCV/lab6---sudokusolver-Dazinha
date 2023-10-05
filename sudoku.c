@@ -232,7 +232,7 @@ Node* DFS(Node* initial, int* cont){
       adj_node = next(adj_nodes);
     }
 
-    clean(adj_node);
+    //clean(adj_node);
   }
 
   return NULL;
