@@ -1,0 +1,12 @@
+Thu 05 Oct 2023 06:54:30 PM UTC: 
+ sudoku.c | 37 ++++++++++++++++++++++++++++++++-----
+ 1 file changed, 32 insertions(+), 5 deletions(-)
+test.c:245:5: error: redefinition of ‘main’
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+In file included from test.c:5:
+sudoku.c:96:5: note: previous definition of ‘main’ with type ‘int(int,  char **)’
+   96 | int main( int argc, char *argv[] ){
+      |     ^~~~
+Compilation failed
+0ce1a56
