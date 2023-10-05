@@ -66,16 +66,15 @@ List* get_adj_nodes(Node* n){
     {
       for (int j = 0 ; j < 3 ; j++)
         {
-          if (aux_node -> sudo[i][j] == 0)
-          {
             for (int k = 1 ; k < 9 ; k++)
               {
+                
                 Node *ady_node = copy(aux_node);
-                ady_node -> sudo[i][j] = k;
+                ady_node -> sudo[i][j] = k; //cambio el 0
 
                 
               }
-          }
+          
         }
     }
 
