@@ -116,7 +116,7 @@ int is_valid(Node* n){
   {
     for (int j = 0; j < 3; j++) 
     {
-      int num = n->sudo[i][j];
+      int num = n -> sudo[i][j];
       
       if (num < 1 || num > 9)
       {
@@ -135,9 +135,9 @@ int is_valid(Node* n){
         return 0; 
       }
       
-      int subgrid_index = i / 3 * 3 + j / 3;
+      int submatriz_index = i / 3 * 3 + j / 3;
       
-      if (submatriz_check[subgrid_index][num] == 1) 
+      if (submatriz_check[submatriz_index][num] == 1) 
       {
         return 0; 
       }
@@ -145,7 +145,7 @@ int is_valid(Node* n){
 
       fila_check[i][num] = 1;
       columna_check[j][num] = 1;
-      submatriz_check[subgrid_index][num] = 1;
+      submatriz_check[submatriz_index][num] = 1;
       
     }
   }
