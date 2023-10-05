@@ -96,3 +96,27 @@ Thu 05 Oct 2023 07:34:01 PM UTC:
  tests:  2|4
 total_score: 15/70
 4bd1215
+Thu 05 Oct 2023 07:47:47 PM UTC: 
+ sudoku.c | 73 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
+ 1 file changed, 70 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_final’:
+sudoku.c:132:26: error: ‘list’ undeclared (first use in this function); did you mean ‘List’?
+  132 |                 pushBack(list, ady_node);
+      |                          ^~~~
+      |                          List
+sudoku.c:132:26: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c: In function ‘DFS’:
+sudoku.c:173:11: error: implicit declaration of function ‘isEmpty’; did you mean ‘is_empty’? [-Werror=implicit-function-declaration]
+  173 |   while (!isEmpty(pila))
+      |           ^~~~~~~
+      |           is_empty
+sudoku.c:176:22: error: void value not ignored as it ought to be
+  176 |       Node* primer = pop(pila);
+      |                      ^~~
+sudoku.c:176:13: error: unused variable ‘primer’ [-Werror=unused-variable]
+  176 |       Node* primer = pop(pila);
+      |             ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+8a62763
