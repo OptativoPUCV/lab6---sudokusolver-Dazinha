@@ -211,12 +211,12 @@ Node* DFS(Node* initial, int* cont){
   while (!is_empty(pila)) 
   { 
     Node* current = top(pila); 
-    (*cont)++; // Incrementar el contador de iteraciones
+    (*cont)++;
 
-        // Verificar si el nodo actual es un estado final
+
     if (is_final(current)) 
     {
-      return current; // Retornar el nodo actual si es un estado final
+      return current; 
     }
 
     //Obtenga la lista de nodos adyacentes al nodo
