@@ -169,7 +169,7 @@ Node* DFS(Node* initial, int* cont){
 
   push(pila, initial);
 
-  while (is_Empty(pila)) 
+  while (is_empty(pila)) 
   { 
     Node* current = top(pila); 
     (*cont)++; // Incrementar el contador de iteraciones
