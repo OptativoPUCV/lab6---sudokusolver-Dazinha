@@ -131,7 +131,7 @@ int is_valid(Node* n){
         return 0; 
       }
       
-      int submatriz_index = i / 3 * 3 + j / 3;
+      int submatriz_index = (i / 3) * 3 + (j / 3);
       
       if (submatriz[submatriz_index][num] == 1) 
       {
@@ -192,9 +192,6 @@ int is_final(Node* n){
 3. Si terminó de recorre el grafo sin encontrar una solución, retorne NULL.
 
 Almacene en la variable cont, la cantidad de iteraciones que realiza el algoritmo.
-
-> - Puede ver un código de ejemplo en las [diapos](https://docs.google.com/presentation/d/1Mqo51pc6knDje153O2eqYiS_tN8Nv6qDz4czjHp493s/edit#slide=id.g27f9355a1a_0_13).
-> - Recuerde revisar las operaciones del TDA Stack en el archivo *list.h*.
 
 */
 
