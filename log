@@ -592,3 +592,9 @@ sudoku.c:79:21: error: implicit declaration of function ‘is_valid’ [-Werror=
 cc1: all warnings being treated as errors
 Compilation failed
 bea3170
+Fri 06 Oct 2023 03:36:00 PM UTC: 
+ sudoku.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+ tests:  3|3
+total_score: 25/70
+310d42f

@@ -75,14 +75,14 @@ List* get_adj_nodes(Node* n){
                 
                 Node *ady_node = copy(aux_node);
                 ady_node -> sudo[i][j] = k; //cambio el 0
-                
+                /*
                 if (is_valid(ady_node) == 1)
                 {
                   pushBack(list, ady_node);
                 
                 }
-                
-                
+                */
+                pushBack(list, ady_node);
               }
           }
         }
@@ -118,9 +118,9 @@ int is_valid(Node* n){
   int columna[9][10] = {0}; 
   int submatriz[9][10] = {0}; 
 
-  for (int i = 0; i < 9; i++) 
+  for (int i = 0; i < 10; i++) 
   {
-    for (int j = 0; j < 9; j++) 
+    for (int j = 0; j < 10; j++) 
     {
       int num = n -> sudo[i][j];
       /*
