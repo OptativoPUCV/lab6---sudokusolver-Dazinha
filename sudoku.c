@@ -114,13 +114,13 @@ El siguiente código se puede usar para recorrer los elementos de una sumbatriz 
 */
 
 int is_valid(Node* n){
-  int fila[9][10] = {0}; 
-  int columna[9][10] = {0}; 
-  int submatriz[9][10] = {0}; 
+  int fila[9][9] = {0}; 
+  int columna[9][9] = {0}; 
+  int submatriz[9][9] = {0}; 
 
-  for (int i = 0; i < 10; i++) 
+  for (int i = 0; i < 9; i++) 
   {
-    for (int j = 0; j < 10; j++) 
+    for (int j = 0; j < 9; j++) 
     {
       int num = n -> sudo[i][j];
       /*
