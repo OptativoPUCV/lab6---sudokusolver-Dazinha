@@ -123,34 +123,34 @@ int is_valid(Node* n){
     for (int j = 0; j < 9; j++) 
     {
       int num = n -> sudo[i][j];
-      /*
+      
       if (num < 1 || num > 9)
       {
         return 0; 
       }
-*/
 
-      if (fila[i][j] == num) 
+
+      if (fila[i][num - 1] == num) 
       {
         return 0; 
       }
       
-      fila[i][num] = 1;
+      fila[i][num - 1] = 1;
 
-      if (columna[j][num] == num) 
+      if (columna[j][num - 1] == num) 
       {
         return 0; 
       }
-      columna[j][num] = 1;
+      columna[j][num - 1] = 1;
       
       int k = (i / 3) * 3 + (j / 3);
       
-      if (submatriz[k][num] == num) 
+      if (submatriz[k][num - 1] == num) 
       {
         return 0; 
       }
       
-      submatriz[k][num] = 1;
+      submatriz[k][num - 1] = 1;
       
     }
   }
