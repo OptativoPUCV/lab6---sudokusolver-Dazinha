@@ -101,6 +101,15 @@ List* get_adj_nodes(Node* n){
 Si el estado es válido la función retorna 1, si no lo es retorna 0.
 
 > Para marcar los números que vayan apareciendo en una fila/columna/submatriz puede usar un arreglo de enteros de largo 10 inicializado con 0s. Cada vez que aparezca un número i, verifique que la casilla i del arreglo sea igual a 0, luego márquela con un '1'. Si la casilla es '1' quiere decir que el número ya estaba marcado por lo que la fla/columna/submatriz no es válida.
+
+El siguiente código se puede usar para recorrer los elementos de una sumbatriz k (por ejemplo k=4):
+    int k=4,p; 
+    for(p=0;p<9;p++){
+        int i=3*(k/3) + (p/3) ;
+        int j=3*(k%3) + (p%3) ;
+        printf("%d ",nodo->sudo[i][j]);
+        if(p%3 == 2) printf("\n");
+    }
 */
 
 int is_valid(Node* n){
@@ -108,17 +117,17 @@ int is_valid(Node* n){
   int columna[9][10] = {0}; 
   int submatriz[9][10] = {0}; 
 
-  for (int i = 0; i < 3; i++) 
+  for (int i = 0; i < 9; i++) 
   {
-    for (int j = 0; j < 3; j++) 
+    for (int j = 0; j < 9; j++) 
     {
       int num = n -> sudo[i][j];
-      
+      /*
       if (num < 1 || num > 9)
       {
         return 0; 
       }
-
+*/
 
       if (fila[i][num] == 1) 
       {
@@ -131,9 +140,9 @@ int is_valid(Node* n){
         return 0; 
       }
       
-      int submatriz_index = (i / 3) * 3 + (j / 3);
+      int k = (i / 3) * 3 + (j / 3);
       
-      if (submatriz[submatriz_index][num] == 1) 
+      if (submatriz[k][num] == 1) 
       {
         return 0; 
       }
@@ -141,13 +150,14 @@ int is_valid(Node* n){
 
       fila[i][num] = 1;
       columna[j][num] = 1;
-      submatriz[submatriz_index][num] = 1;
+      submatriz[k][num] = 1;
       
     }
   }
 
     return 1; 
 }
+
 
 /*
 3.Modifique la función *get_adj_nodes* para que sólo los nodos válidos sean retornados (use la función *is_valid*).
