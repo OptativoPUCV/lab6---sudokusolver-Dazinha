@@ -135,13 +135,13 @@ int is_valid(Node* n){
         return 0; 
       }
       
-      fila[i][num - 1] = 1;
+      fila[i][num - 1] = num;
 
       if (columna[j][num - 1] == num) 
       {
         return 0; 
       }
-      columna[j][num - 1] = 1;
+      columna[j][num - 1] = num;
       
       int k = (i / 3) * 3 + (j / 3);
       
@@ -150,7 +150,7 @@ int is_valid(Node* n){
         return 0; 
       }
       
-      submatriz[k][num - 1] = 1;
+      submatriz[k][num - 1] = num;
       
     }
   }
