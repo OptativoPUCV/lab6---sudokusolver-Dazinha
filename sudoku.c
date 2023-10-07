@@ -66,27 +66,25 @@ int is_valid(Node* n){
     {
       int num = n -> sudo[i][j];
 
-      if (fila[num] == 0) 
+      if (fila[num] == num) 
       {
         fila[num] = 1;
         return 0;
       }
 
-      if (columna[num] == 0) 
+      if (columna[num] == num) 
       {
         columna[num] = 1;
       }
 
       int submatriz_index = (i / 3) * 3 + (j / 3);
       
-      if (submatriz[submatriz_index][num] == 0) 
+      if (submatriz[submatriz_index][num] == num) 
       {
         submatriz[submatriz_index][num] = 1;
       }
       
   
-      
-
       
     }
 
