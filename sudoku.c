@@ -99,7 +99,7 @@ int is_valid(Node* n){
 
     return 1; 
 }
-
+  
 /*
 1.Cree una función que a partir de un nodo genere una **lista con los nodos adyacentes**:
 
@@ -162,13 +162,11 @@ List* get_adj_nodes(Node* n){
 
 int is_final(Node* n){
 
-  Node *aux_node  = copy(n);
-
-  for (int i = 0 ; i < 3 ; i++)
+  for (int i = 0 ; i < 9 ; i++)
     {
-      for (int j = 0 ; j < 3 ; j++)
+      for (int j = 0 ; j < 9 ; j++)
         {
-          if (aux_node -> sudo[i][j] == 0) //si son distintos a 0
+          if (n -> sudo[i][j] == 0) //si son distintos a 0
           {
             return 0;
           }
@@ -231,10 +229,8 @@ Node* DFS(Node* initial, int* cont){
       push(pila, vecino_node);
       adj_node = next(adj_nodes);
 
-
     }
 
-    clean(adj_nodes);
   }
 
   return NULL;
