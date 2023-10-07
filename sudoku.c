@@ -56,9 +56,9 @@ Si el estado es válido la función retorna 1, si no lo es retorna 0.
 */
 
 int is_valid(Node* n){
-  int fila[10] = {0}; 
-  int columna[10] = {0}; 
-  int submatriz[3][3] = {0}; 
+  int fila[10][10] = {0}; 
+  int columna[10][10] = {0}; 
+  int submatriz[10][10] = {0}; 
 
   for (int i = 0; i < 9; i++) 
   {
@@ -66,17 +66,18 @@ int is_valid(Node* n){
     {
       int num = n -> sudo[i][j];
 
-      if (fila[num] == num) 
+      if (fila[i][num] == 1) 
       {
         
         return 0;
       }
-  
+      fila[i][num] = 1;
         
-      if (columna[num] == num) 
+      if (columna[j][num] == num) 
       {
-        columna[num] = 1;
+        return 0;
       }
+      columna[j][num] = 1;
 
       int submatriz_index = (i / 3) * 3 + (j / 3);
       
