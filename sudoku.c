@@ -117,19 +117,19 @@ List* get_adj_nodes(Node* n){
     y agréguelos a la lista
   */
 
-  Node *aux_node  = copy(n);
+  //Node *aux_node  = copy(n);
 
   for (int i = 0 ; i < 9 ; i++)
     {
       for (int j = 0 ; j < 9 ; j++)
         {
-          if (aux_node -> sudo[i][j] == 0) //si tengo un 0
+          if (n -> sudo[i][j] == 0) //si tengo un 0
           {
             
             for (int k = 1 ; k <= 9 ; k++)
               {
                 
-                Node *ady_node = copy(aux_node);
+                Node *ady_node = copy(n);
                 ady_node -> sudo[i][j] = k; //cambio el 0
                 pushBack(list, ady_node);
                 /*
