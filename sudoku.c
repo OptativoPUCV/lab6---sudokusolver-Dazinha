@@ -65,12 +65,12 @@ int is_valid(Node* n){
     for (int j = 0; j < 9; j++) 
     {
       int num = n -> sudo[i][j];
-      
+      /*
       if (num < 1 || num > 9)
       {
         return 0; 
       }
-
+*/
 
       if (fila[i][num-1] == 1) 
       {
@@ -132,7 +132,7 @@ List* get_adj_nodes(Node* n){
                 Node *ady_node = copy(n);
                 ady_node -> sudo[i][j] = k; //cambio el 0
                 pushBack(list, ady_node);
-                
+                /*
                 if (is_valid(ady_node) == 1)
                 {
                   pushBack(list, ady_node);
@@ -142,7 +142,7 @@ List* get_adj_nodes(Node* n){
                 {
                   return list;
                 }
-              
+              */
               }
 
           
