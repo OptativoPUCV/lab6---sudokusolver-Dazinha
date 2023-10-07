@@ -89,9 +89,6 @@ int is_valid(Node* n){
         return 0; // Si ya está marcado, no es válido
       }
 
-      fila[num] = 1;
-      columna[num] = 1;
-      submatriz[(i / 3) * 3 + j / 3] = 1;
     
       
     }

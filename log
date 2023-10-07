@@ -896,3 +896,31 @@ sudoku.c:99:3: error: control reaches end of non-void function [-Werror=return-t
 cc1: all warnings being treated as errors
 Compilation failed
 46ac7ca
+Sat 07 Oct 2023 04:55:06 PM UTC: 
+ sudoku.c | 3 ---
+ 1 file changed, 3 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:83:37: error: subscripted value is neither array nor pointer nor vector
+   83 |       if (submatriz[submatriz_index][num] == 1) {
+      |                                     ^
+sudoku.c:87:33: error: subscripted value is neither array nor pointer nor vector
+   87 |       submatriz[submatriz_index][num] = 1;
+      |                                 ^
+sudoku.c:61:7: error: variable ‘submatriz’ set but not used [-Werror=unused-but-set-variable]
+   61 |   int submatriz[10] = {0};
+      |       ^~~~~~~~~
+sudoku.c: At top level:
+sudoku.c:98:3: error: expected identifier or ‘(’ before ‘return’
+   98 |   return 1;
+      |   ^~~~~~
+sudoku.c:99:1: error: expected identifier or ‘(’ before ‘}’ token
+   99 | }
+      | ^
+sudoku.c: In function ‘is_valid’:
+sudoku.c:96:3: error: control reaches end of non-void function [-Werror=return-type]
+   96 |   }
+      |   ^
+cc1: all warnings being treated as errors
+Compilation failed
+5a8139b
