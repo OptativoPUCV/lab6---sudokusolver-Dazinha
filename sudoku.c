@@ -44,13 +44,15 @@ void print_node(Node* n){
 }
 
 /*
-1.Cree una función que a partir de un nodo genere una **lista con los nodos adyacentes**:
+2.Cree la función **int is_valid(Node * n)**, para validar si un estado/nodo es válido (cumple con las restricciones del problema). Debe validar que:
 
-Recuerde que los nodos adyacentes son generados aplicando las acciones al estado actual.
+- No se repitan números en las filas
+- No se repitan números en las columnas
+- No se repitan números en las submatrices de 3x3
 
-> - Para el caso del ejemplo, la función debería retornar una lista con **9 nodos**. Cada uno de ellos idéntico al nodo original pero cambiando el valor de la primera casilla vacía, es decir: sudo[0][2], por 1, 2, ..., 9.
-> - Utilice la función Node* copy(Node* n) para copiar nodos.
+Si el estado es válido la función retorna 1, si no lo es retorna 0.
 
+> Para marcar los números que vayan apareciendo en una fila/columna/submatriz puede usar un arreglo de enteros de largo 10 inicializado con 0s. Cada vez que aparezca un número i, verifique que la casilla i del arreglo sea igual a 0, luego márquela con un '1'. Si la casilla es '1' quiere decir que el número ya estaba marcado por lo que la fla/columna/submatriz no es válida.
 */
 
 int is_valid(Node* n){
@@ -98,6 +100,14 @@ int is_valid(Node* n){
     return 1; 
 }
 
+/*
+1.Cree una función que a partir de un nodo genere una **lista con los nodos adyacentes**:
+
+Recuerde que los nodos adyacentes son generados aplicando las acciones al estado actual.
+
+> - Para el caso del ejemplo, la función debería retornar una lista con **9 nodos**. Cada uno de ellos idéntico al nodo original pero cambiando el valor de la primera casilla vacía, es decir: sudo[0][2], por 1, 2, ..., 9.
+> - Utilice la función Node* copy(Node* n) para copiar nodos.
+*/
 
 List* get_adj_nodes(Node* n){
   
@@ -143,30 +153,6 @@ List* get_adj_nodes(Node* n){
   
     return list;
 }
-
-/*
-2.Cree la función **int is_valid(Node * n)**, para validar si un estado/nodo es válido (cumple con las restricciones del problema). Debe validar que:
-
-- No se repitan números en las filas
-- No se repitan números en las columnas
-- No se repitan números en las submatrices de 3x3
-
-Si el estado es válido la función retorna 1, si no lo es retorna 0.
-
-> Para marcar los números que vayan apareciendo en una fila/columna/submatriz puede usar un arreglo de enteros de largo 10 inicializado con 0s. Cada vez que aparezca un número i, verifique que la casilla i del arreglo sea igual a 0, luego márquela con un '1'. Si la casilla es '1' quiere decir que el número ya estaba marcado por lo que la fla/columna/submatriz no es válida.
-
-El siguiente código se puede usar para recorrer los elementos de una sumbatriz k (por ejemplo k=4):
-    int k=4,p; 
-    for(p=0;p<9;p++){
-        int i=3*(k/3) + (p/3) ;
-        int j=3*(k%3) + (p%3) ;
-        printf("%d ",nodo->sudo[i][j]);
-        if(p%3 == 2) printf("\n");
-    }
-*/
-
-
-
 
 /*
 3.Modifique la función *get_adj_nodes* para que sólo los nodos válidos sean retornados (use la función *is_valid*).
