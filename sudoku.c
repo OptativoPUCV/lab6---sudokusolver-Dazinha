@@ -216,12 +216,13 @@ Node* DFS(Node* initial, int* cont){
     List* adj_nodes = get_adj_nodes(current);
 
     //Agregue los nodos de la lista (uno por uno) al stack S.
+    void* adj_node = first(adj_nodes);
     
-    while (adj_nodes != NULL) 
+    while (adj_node != NULL) 
     {
-      Node* vecino_node = (Node*)adj_nodes;
+      Node* vecino_node = (Node*)adj_node;
       push(pila, vecino_node);
-      adj_nodes = next(adj_nodes);
+      adj_node = next(adj_nodes);
 
     }
 
