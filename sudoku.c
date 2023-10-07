@@ -173,6 +173,7 @@ int is_final(Node* n){
     return 1;
 }
 
+
 /*
 5.Implemente la función Node* DFS(Node* n, int* cont). Esta función realiza una búsqueda en profundidad a partir del nodo n. El algoritmo es el siguiente:
 
@@ -201,7 +202,7 @@ Node* DFS(Node* initial, int* cont){
   //Mientras el stack S NO se encuentre vacío:
   while (!is_empty(pila)) 
   { 
-    //(*cont)++;
+    (*cont)++;
     //Saque y elimine el primer nodo de S.
     Node* current = top(pila); 
     pop(pila);
