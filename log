@@ -651,3 +651,14 @@ sudoku.c:80:21: error: implicit declaration of function ‘is_valid’ [-Werror=
 cc1: all warnings being treated as errors
 Compilation failed
 b82bee8
+Sat 07 Oct 2023 12:58:54 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:80:21: error: implicit declaration of function ‘is_valid’ [-Werror=implicit-function-declaration]
+   80 |                 if (is_valid(ady_node))
+      |                     ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+2292e6c
