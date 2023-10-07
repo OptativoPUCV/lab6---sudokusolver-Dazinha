@@ -71,14 +71,12 @@ int is_valid(Node* n){
         
         return 0;
       }
-
-      fila[num] = 1;
+  
         
       if (columna[num] == num) 
       {
-        return 0;
+        columna[num] = 1;
       }
-      columna[num] = 1;
 
       int submatriz_index = (i / 3) * 3 + (j / 3);
       
