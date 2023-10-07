@@ -121,7 +121,7 @@ List* get_adj_nodes(Node* n){
                 
                 Node *ady_node = copy(aux_node);
                 ady_node -> sudo[i][j] = k; //cambio el 0
-                
+                /*
                 if (is_valid(ady_node) == 1)
                 {
                   pushBack(list, ady_node);
@@ -131,7 +131,7 @@ List* get_adj_nodes(Node* n){
                 {
                   return list;
                 }
-            
+              */
               }
 
           
