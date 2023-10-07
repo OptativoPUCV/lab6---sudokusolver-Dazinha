@@ -67,13 +67,15 @@ int is_valid(Node* n){
       int num = n -> sudo[i][j];
       
             // Verificar si el número ya está marcado en la fila
-      if (fila[num] == 1) {
+      if (fila[num] == 1) 
+      {
         return 0;
       }
       // Marcar el número en la fila
       fila[num] = 1;
       // Verificar si el número ya está marcado en la columna
-      if (columna[num] == 1) {
+      if (columna[num] == 1) 
+      {
         return 0;
       }
       // Marcar el número en la columna
@@ -87,7 +89,7 @@ int is_valid(Node* n){
       submatriz[submatriz_index][num] = 1;
 
         return 0; // Si ya está marcado, no es válido
-      }
+      
 
     
       
