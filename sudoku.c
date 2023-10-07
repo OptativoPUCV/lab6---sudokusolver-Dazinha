@@ -56,43 +56,37 @@ Si el estado es válido la función retorna 1, si no lo es retorna 0.
 */
 
 int is_valid(Node* n){
-  int fila[10] = {0}; 
-  int columna[10] = {0}; 
-  int submatriz[3][3] = {0}; 
+      int fila[10][10] = {0}; 
+    int columna[10][10] = {0}; 
+    int submatriz[10][10] = {0}; 
 
-  for (int i = 0; i < 9; i++) 
-  {
-    for (int j = 0; j < 9; j++) 
-    {
-      int num = n -> sudo[i][j];
-
-      if (fila[num] == 0) 
-      {
-        fila[num] = 1;
-        return 0;
-      }
-
-      if (columna[num] == 0) 
-      {
-        columna[num] = 1;
-      }
-
-      int submatriz_index = (i / 3) * 3 + (j / 3);
-      
-      if (submatriz[submatriz_index][num] == 0) 
-      {
-        submatriz[submatriz_index][num] = 1;
-      }
-      
-  
-      
-
-      
+    for (int i = 0; i < 9; i++) {
+        for (int j = 0; j < 9; j++) {
+            int num = n->sudo[i][j];
+            
+            // Verificar si el número ya se ha visto en la misma fila
+            if (fila[i][num] == 1) {
+                return 0;  // Estado no válido
+            }
+            fila[i][num] = 1;
+            
+            // Verificar si el número ya se ha visto en la misma columna
+            if (columna[j][num] == 1) {
+                return 0;  // Estado no válido
+            }
+            columna[j][num] = 1;
+            
+            // Verificar si el número ya se ha visto en la misma submatriz
+            int submatriz_index = (i / 3) * 3 + (j / 3);
+            if (submatriz[submatriz_index][num] == 1) {
+                return 0;  // Estado no válido
+            }
+            submatriz[submatriz_index][num] = 1;
+        }
     }
 
-  }
+    return 1;  // Si llegamos aquí, el estado es válido
 
-  return 1; 
 }
   
 /*
