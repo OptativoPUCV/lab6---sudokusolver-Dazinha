@@ -68,6 +68,13 @@ int is_valid(Node* n){
       
       if (fila[num] || columna[num] || submatriz[(i / 3) * 3 + j / 3])
       {
+        for (int k = 1; k <= 9; k++) 
+        {
+          fila[k] = 0;
+          columna[k] = 0;
+          submatriz[k] = 0;
+        }
+
         return 0; // Si ya está marcado, no es válido
       }
 
