@@ -58,41 +58,39 @@ Si el estado es válido la función retorna 1, si no lo es retorna 0.
 int is_valid(Node* n){
   int fila[10] = {0}; 
   int columna[10] = {0}; 
-  int submatriz[10] = {0}; 
+  int submatriz[3][3][10] = {0}; 
 
   for (int i = 0; i < 9; i++) 
   {
     for (int j = 0; j < 9; j++) 
     {
       int num = n -> sudo[i][j];
-      
-            // Verificar si el número ya está marcado en la fila
+
       if (fila[num] == 1) 
       {
         return 0;
       }
-      // Marcar el número en la fila
+
       fila[num] = 1;
-      // Verificar si el número ya está marcado en la columna
+
       if (columna[num] == 1) 
       {
         return 0;
       }
-      // Marcar el número en la columna
+      
       columna[num] = 1;
-      // Verificar si el número ya está marcado en la submatriz
+
       int submatriz_index = (i / 3) * 3 + (j / 3);
-      if (submatriz[submatriz_index][num] == 1) {
+      
+      if (submatriz[submatriz_index][num] == 1) 
+      {
         return 0;
       }
       // Marcar el número en la submatriz
       submatriz[submatriz_index][num] = 1;
 
-        return 0; // Si ya está marcado, no es válido
-      
+      return 0; 
 
-    
-      
     }
 
   }
