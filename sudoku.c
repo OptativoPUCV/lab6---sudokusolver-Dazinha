@@ -58,7 +58,7 @@ Si el estado es válido la función retorna 1, si no lo es retorna 0.
 int is_valid(Node* n){
   int fila[10] = {0}; 
   int columna[10] = {0}; 
-  int submatriz[3][3][10] = {0}; 
+  int submatriz[3][3] = {0}; 
 
   for (int i = 0; i < 9; i++) 
   {
@@ -89,7 +89,6 @@ int is_valid(Node* n){
       // Marcar el número en la submatriz
       submatriz[submatriz_index][num] = 1;
 
-      return 0; 
 
     }
 
