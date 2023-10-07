@@ -85,14 +85,19 @@ int is_valid(Node* n){
   }
 
     // Recorrer las submatrices de 3x3
-  for (int i = 0; i < 9; i += 3) {
-    for (int j = 0; j < 9; j += 3) {
-      // Verificar que el número en la submatriz no se repita
-      if (submatriz[n -> sudo[i][j]] == 1) {
+  for (int i = 0; i < 9; i += 3) 
+  {
+    for (int j = 0; j < 9; j += 3) 
+    {
+      if (submatriz[n -> sudo[i][j]] == 1)
+      {
         return 0;
-      } else {
+      } 
+      else 
+      {
         submatriz[n -> sudo[i][j]] = 1;
       }
+      
     }
   }
 
