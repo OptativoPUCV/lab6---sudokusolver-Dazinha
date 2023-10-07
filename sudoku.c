@@ -66,14 +66,25 @@ int is_valid(Node* n){
     {
       int num = n -> sudo[i][j];
       
-      if (fila[num] || columna[num] || submatriz[(i / 3) * 3 + j / 3])
-      {
-        for (int k = 1; k <= 9; k++) 
-        {
-          fila[k] = 0;
-          columna[k] = 0;
-          submatriz[k] = 0;
-        }
+            // Verificar si el número ya está marcado en la fila
+      if (fila[num] == 1) {
+        return 0;
+      }
+      // Marcar el número en la fila
+      fila[num] = 1;
+      // Verificar si el número ya está marcado en la columna
+      if (columna[num] == 1) {
+        return 0;
+      }
+      // Marcar el número en la columna
+      columna[num] = 1;
+      // Verificar si el número ya está marcado en la submatriz
+      int submatriz_index = (i / 3) * 3 + (j / 3);
+      if (submatriz[submatriz_index][num] == 1) {
+        return 0;
+      }
+      // Marcar el número en la submatriz
+      submatriz[submatriz_index][num] = 1;
 
         return 0; // Si ya está marcado, no es válido
       }

@@ -861,3 +861,38 @@ Sat 07 Oct 2023 04:10:15 PM UTC:
  tests:  1|4
 total_score: 10/70
 dae6cef
+Sat 07 Oct 2023 04:54:58 PM UTC: 
+ sudoku.c | 25 ++++++++++++++++++-------
+ 1 file changed, 18 insertions(+), 7 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:83:37: error: subscripted value is neither array nor pointer nor vector
+   83 |       if (submatriz[submatriz_index][num] == 1) {
+      |                                     ^
+sudoku.c:87:33: error: subscripted value is neither array nor pointer nor vector
+   87 |       submatriz[submatriz_index][num] = 1;
+      |                                 ^
+sudoku.c:92:12: error: ‘num’ undeclared (first use in this function)
+   92 |       fila[num] = 1;
+      |            ^~~
+sudoku.c:92:12: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:94:31: error: ‘j’ undeclared (first use in this function)
+   94 |       submatriz[(i / 3) * 3 + j / 3] = 1;
+      |                               ^
+sudoku.c:61:7: error: variable ‘submatriz’ set but not used [-Werror=unused-but-set-variable]
+   61 |   int submatriz[10] = {0};
+      |       ^~~~~~~~~
+sudoku.c: At top level:
+sudoku.c:101:3: error: expected identifier or ‘(’ before ‘return’
+  101 |   return 1;
+      |   ^~~~~~
+sudoku.c:102:1: error: expected identifier or ‘(’ before ‘}’ token
+  102 | }
+      | ^
+sudoku.c: In function ‘is_valid’:
+sudoku.c:99:3: error: control reaches end of non-void function [-Werror=return-type]
+   99 |   }
+      |   ^
+cc1: all warnings being treated as errors
+Compilation failed
+46ac7ca
