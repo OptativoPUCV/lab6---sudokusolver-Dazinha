@@ -87,12 +87,12 @@ int is_valid(Node* n){
       
       int k = (i / 3) * 3 + (j / 3);
       
-      if (submatriz[k][num] == 1) 
+      if (submatriz[k][num-1] == 1) 
       {
         return 0; 
       }
       
-      submatriz[k][num] = 1;
+      submatriz[k][num-1] = 1;
       
     }
   }
