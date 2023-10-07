@@ -72,9 +72,35 @@ int is_valid(Node* n){
     }
   }
 
+  for (int j = 0; j < 9; j++) 
+  {
+    if (columna[n -> sudo[0][j]])
+    {
+      return 0;
+    }
+    else
+    {
+      columna[n -> sudo[0][j]] = 1;
+    }
+  }
+
+    // Recorrer las submatrices de 3x3
+  for (int i = 0; i < 9; i += 3) {
+    for (int j = 0; j < 9; j += 3) {
+      // Verificar que el número en la submatriz no se repita
+      if (submatriz[n -> sudo[i][j]] == 1) {
+        return 0;
+      } else {
+        submatriz[n -> sudo[i][j]] = 1;
+      }
+    }
+  }
+
   return 1; 
-}
   
+}
+
+
 /*
 1.Cree una función que a partir de un nodo genere una **lista con los nodos adyacentes**:
 
