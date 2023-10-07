@@ -65,12 +65,12 @@ int is_valid(Node* n){
     for (int j = 0; j < 9; j++) 
     {
       int num = n -> sudo[i][j];
-      
+      /*
       if (num < 1 || num > 9)
       {
         return 0; 
       }
-
+*/
 
       if (fila[i][num-1] == 1) 
       {
