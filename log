@@ -814,3 +814,15 @@ Sat 07 Oct 2023 01:50:32 AM UTC:
  tests:  3|3
 total_score: 25/70
 5f3d2da
+Sat 07 Oct 2023 03:35:21 PM UTC: 
+ sudoku.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:220:12: error: ‘adj_node’ undeclared (first use in this function); did you mean ‘adj_nodes’?
+  220 |     while (adj_node != NULL)
+      |            ^~~~~~~~
+      |            adj_nodes
+sudoku.c:220:12: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+99d07a9

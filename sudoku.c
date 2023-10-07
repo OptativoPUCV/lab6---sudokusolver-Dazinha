@@ -190,20 +190,18 @@ int is_final(Node* n){
    e) Libere la memoria usada por el nodo.
    
 3. Si terminó de recorre el grafo sin encontrar una solución, retorne NULL.
-
 Almacene en la variable cont, la cantidad de iteraciones que realiza el algoritmo.
-
 */
 
 Node* DFS(Node* initial, int* cont){
   //Cree un stack S (pila) e inserte el nodo.
   Stack* pila = createStack();
-
   push(pila, initial);
 
+  //Mientras el stack S NO se encuentre vacío:
   while (!is_empty(pila)) 
   { 
-    (*cont)++;
+    //(*cont)++;
     //Saque y elimine el primer nodo de S.
     Node* current = top(pila); 
     pop(pila);
@@ -218,7 +216,6 @@ Node* DFS(Node* initial, int* cont){
     List* adj_nodes = get_adj_nodes(current);
 
     //Agregue los nodos de la lista (uno por uno) al stack S.
-    void* adj_node = first(adj_nodes);
     
     while (adj_node != NULL) 
     {
