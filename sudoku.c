@@ -69,13 +69,13 @@ int is_valid(Node* n){
       if (fila[num] == 0) 
       {
         fila[num] = 1;
+        return 0;
       }
 
       if (columna[num] == 0) 
       {
         columna[num] = 1;
       }
-      
 
       int submatriz_index = (i / 3) * 3 + (j / 3);
       
@@ -84,11 +84,10 @@ int is_valid(Node* n){
         submatriz[submatriz_index][num] = 1;
       }
       
-      // Marcar el número en fila, columna y submatriz
   
       
 
-
+      
     }
 
   }
