@@ -66,14 +66,14 @@ int is_valid(Node* n){
     {
       int num = n -> sudo[i][j];
 
-      if (fila[num] == 1) 
+      if (fila[num] == 0) 
       {
-        return 0;
+        fila[num] = 1;
       }
 
       if (columna[num] == 1) 
       {
-        return 0;
+        columna[num] = 1;
       }
       
 
@@ -85,7 +85,7 @@ int is_valid(Node* n){
       }
       
       // Marcar el número en fila, columna y submatriz
-      fila[num] = 1;
+      
       columna[num] = 1;
       submatriz[submatriz_index][num] = 1;
 
