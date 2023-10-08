@@ -148,7 +148,10 @@ List* get_adj_nodes(Node* n){
                 if (is_valid(ady_node) == 1)
                 {
                   pushBack(list, ady_node);
-                
+                }
+                else
+                {
+                  free(ady_node); 
                 }
                 
               
