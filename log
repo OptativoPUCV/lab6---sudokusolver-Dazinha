@@ -1445,3 +1445,22 @@ Sun 08 Oct 2023 09:36:19 PM UTC:
  tests:  6|2
 total_score: 45/70
 bbd2904
+Sun 08 Oct 2023 09:41:56 PM UTC: 
+ sudoku.c | 66 +++++-----------------------------------------------------------
+ 1 file changed, 5 insertions(+), 61 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:73:13: error: ‘verificador’ undeclared (first use in this function); did you mean ‘verificador_col’?
+   73 |         if (verificador[num] == 1)
+      |             ^~~~~~~~~~~
+      |             verificador_col
+sudoku.c:73:13: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:65:9: error: unused variable ‘verificador_col’ [-Werror=unused-variable]
+   65 |     int verificador_col[10] = {0};
+      |         ^~~~~~~~~~~~~~~
+sudoku.c:64:9: error: unused variable ‘verificador_fila’ [-Werror=unused-variable]
+   64 |     int verificador_fila[10] = {0}; // Arreglo temporal para la fila
+      |         ^~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+8b059c5
