@@ -1097,3 +1097,18 @@ Sun 08 Oct 2023 02:41:38 AM UTC:
  tests:  1|4
 total_score: 10/70
 a92e7f4
+Sun 08 Oct 2023 02:42:13 AM UTC: 
+ sudoku.c | 46 +++++++++++++++++++++++++++++++---------------
+ 1 file changed, 31 insertions(+), 15 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:118:27: error: ‘j’ undeclared (first use in this function)
+  118 |     if (fila[n -> sudo[i][j]] == 1)
+      |                           ^
+sudoku.c:118:27: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:112:7: error: variable ‘fila’ set but not used [-Werror=unused-but-set-variable]
+  112 |   int fila[10] = {0};
+      |       ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+31f3f67
