@@ -88,14 +88,7 @@ Si el estado es válido la función retorna 1, si no lo es retorna 0.
   return 1;
 }
 */
-  for (int i = 0; i < 9; i++) {
-    // Verificar que el número en la fila no se repita
-    if (fila[n->board[i][0]] == 1) {
-      return 0;
-    } else {
-      fila[n->board[i][0]] = 1;
-    }
-  }
+
 
 int is_valid(Node* n){
   int fila[10] = {0}; 
