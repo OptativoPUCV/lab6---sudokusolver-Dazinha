@@ -53,8 +53,8 @@ void print_node(Node* n){
 Si el estado es válido la función retorna 1, si no lo es retorna 0.
 
 > Para marcar los números que vayan apareciendo en una fila/columna/submatriz puede usar un arreglo de enteros de largo 10 inicializado con 0s. Cada vez que aparezca un número i, verifique que la casilla i del arreglo sea igual a 0, luego márquela con un '1'. Si la casilla es '1' quiere decir que el número ya estaba marcado por lo que la fla/columna/submatriz no es válida.
-
 */
+
 
 int is_valid(Node* n){
   
@@ -122,6 +122,7 @@ Recuerde que los nodos adyacentes son generados aplicando las acciones al estado
 > - Utilice la función Node* copy(Node* n) para copiar nodos.
 */
 
+
 List* get_adj_nodes(Node* n){
   
   List* list=createList();
@@ -142,14 +143,14 @@ List* get_adj_nodes(Node* n){
                 
                 Node *ady_node = copy(n);
                 ady_node -> sudo[i][j] = k; //cambio el 0
-                pushBack(list, ady_node);
-                /*
+                //pushBack(list, ady_node);
+               
                 if (is_valid(ady_node) == 1)
                 {
                   pushBack(list, ady_node);
                 
                 }
-                */
+                
               
               }
 
