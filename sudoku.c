@@ -286,6 +286,8 @@ Node* DFS(Node* initial, int* cont){
 
     }
 
+    clean(adj_nodes);
+    
   }
 
   return NULL;
