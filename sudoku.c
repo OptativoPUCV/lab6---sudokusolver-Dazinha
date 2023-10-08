@@ -142,14 +142,14 @@ List* get_adj_nodes(Node* n){
                 
                 Node *ady_node = copy(n);
                 ady_node -> sudo[i][j] = k; //cambio el 0
-                pushBack(list, ady_node);
-                /*
+                //pushBack(list, ady_node);
+                
                 if (is_valid(ady_node) == 1)
                 {
                   pushBack(list, ady_node);
                 
                 }
-                */
+                
               
               }
 
