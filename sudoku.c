@@ -53,7 +53,49 @@ void print_node(Node* n){
 Si el estado es válido la función retorna 1, si no lo es retorna 0.
 
 > Para marcar los números que vayan apareciendo en una fila/columna/submatriz puede usar un arreglo de enteros de largo 10 inicializado con 0s. Cada vez que aparezca un número i, verifique que la casilla i del arreglo sea igual a 0, luego márquela con un '1'. Si la casilla es '1' quiere decir que el número ya estaba marcado por lo que la fla/columna/submatriz no es válida.
+
+
+  // Recorrer las filas
+  for (int i = 0; i < 9; i++) {
+    // Verificar que el número en la fila no se repita
+    if (fila[n->board[i][0]] == 1) {
+      return 0;
+    } else {
+      fila[n->board[i][0]] = 1;
+    }
+  }
+  // Recorrer las columnas
+  for (int j = 0; j < 9; j++) {
+    // Verificar que el número en la columna no se repita
+    if (columna[n->board[0][j]] == 1) {
+      return 0;
+    } else {
+      columna[n->board[0][j]] = 1;
+    }
+  }
+  // Recorrer las submatrices de 3x3
+  for (int i = 0; i < 9; i += 3) {
+    for (int j = 0; j < 9; j += 3) {
+      // Verificar que el número en la submatriz no se repita
+      if (submatriz[n->board[i][j]] == 1) {
+        return 0;
+      } else {
+        submatriz[n->board[i][j]] = 1;
+      }
+    }
+  }
+  // Si el estado es válido, retornar 1
+  return 1;
+}
 */
+  for (int i = 0; i < 9; i++) {
+    // Verificar que el número en la fila no se repita
+    if (fila[n->board[i][0]] == 1) {
+      return 0;
+    } else {
+      fila[n->board[i][0]] = 1;
+    }
+  }
 
 int is_valid(Node* n){
   int fila[10] = {0}; 
@@ -62,7 +104,7 @@ int is_valid(Node* n){
 
   for (int i = 0; i < 9; i++) 
   {
-    if (fila[n -> sudo[i][0]])
+    if (fila[n -> sudo[i][0]] == 1)
     {
       return 0;
     }
@@ -74,7 +116,7 @@ int is_valid(Node* n){
 
   for (int j = 0; j < 9; j++) 
   {
-    if (columna[n -> sudo[0][j]])
+    if (columna[n -> sudo[0][j]] == 1)
     {
       return 0;
     }

@@ -1058,3 +1058,18 @@ Sat 07 Oct 2023 11:58:12 PM UTC:
  tests:  3|3
 total_score: 25/70
 ec3a670
+Sun 08 Oct 2023 02:33:59 AM UTC: 
+ sudoku.c | 46 ++++++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 44 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c:91:3: error: expected identifier or ‘(’ before ‘for’
+   91 |   for (int i = 0; i < 9; i++) {
+      |   ^~~
+sudoku.c:91:21: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘<’ token
+   91 |   for (int i = 0; i < 9; i++) {
+      |                     ^
+sudoku.c:91:27: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘++’ token
+   91 |   for (int i = 0; i < 9; i++) {
+      |                           ^~
+Compilation failed
+7ce1f18
