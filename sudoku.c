@@ -285,8 +285,8 @@ Node* DFS(Node* initial, int* cont){
       adj_node = next(adj_nodes);
 
     }
-
-    clean(adj_nodes);
+    //Libere la memoria usada por el nodo.
+    clean(adj_node);
     
   }
 
