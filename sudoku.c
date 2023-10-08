@@ -61,7 +61,8 @@ int is_valid(Node* n){
   int used[10] = {0}; 
 
   // Reiniciar el arreglo used manualmente
-  for (int i = 0; i < 10; i++) {
+  for (int i = 0; i < 10; i++) 
+  {
     used[i] = 0;
   }
 
