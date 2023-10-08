@@ -61,15 +61,15 @@ int is_valid(Node* n){
   int columna[10] = {0}; 
   int submatriz[10] = {0}; 
 
-    for (int i = 0; i < 9; i++) 
+  for (int i = 0; i < 9; i++) 
   {
-    if (fila[n -> sudo[i][j]] == 1)
+    if (fila[n -> sudo[i][0]] == 1)
     {
       return 0;
     }
     else
     {
-      fila[n -> sudo[i][j]] = 1;
+      fila[n -> sudo[i][0]] = 1;
     }
   }
 
