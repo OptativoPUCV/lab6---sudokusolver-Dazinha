@@ -58,7 +58,7 @@ Si el estado es válido la función retorna 1, si no lo es retorna 0.
 
 int is_valid(Node* n){
   
-  int verificador[10] = {0}; 
+  int verificador_fil[10] = {0}; 
 
   //verificar filas y columnas
   for (int i = 0; i < 9; i++) 
@@ -70,20 +70,17 @@ int is_valid(Node* n){
       if (num != 0) 
       {
         
-        if (verificador[num] == 1) 
+        if (verificador_fil[num] == 1) 
         {
           return 0; // Número repetido en la fila
         }
-        verificador[num] = 1;
+        verificador_fil[num] = 1;
       }
     }
   }
 
   //reiniciar arreglo
-  for (int i = 0; i < 10; i++) 
-  {
-    verificador[i] = 0;
-  }
+  int verificador_col[10] = {0};
 
   // Verificar columnas
   for (int i = 0; i < 9; i++) 
@@ -94,21 +91,17 @@ int is_valid(Node* n){
       if (num != 0) 
       {
         
-        if (verificador[num] == 1) 
+        if (verificador_col[num] == 1) 
         {
           return 0; // Número repetido en la columna
         }
         
-        verificador[num] = 1;
+        verificador_col[num] = 1;
       }
     }
   }
 
-  //reiniciar arreglo
-  for (int i = 0; i < 10; i++) 
-  {
-    verificador[i] = 0;
-  }
+  int verificador_subm[10] = {0};
 
   // Verificar submatrices de 3x3
   for (int fila = 0; fila < 9; fila += 3) 
@@ -124,12 +117,12 @@ int is_valid(Node* n){
           if (num != 0) 
           {
             
-            if (verificador[num] == 1) 
+            if (verificador_subm[num] == 1) 
             {
               return 0; // Número repetido en la submatriz
             }
             
-            verificador[num] = 1;
+            verificador_subm[num] = 1;
             
           }
           
