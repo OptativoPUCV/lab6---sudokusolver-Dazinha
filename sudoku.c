@@ -54,12 +54,14 @@ Si el estado es válido la función retorna 1, si no lo es retorna 0.
 
 > Para marcar los números que vayan apareciendo en una fila/columna/submatriz puede usar un arreglo de enteros de largo 10 inicializado con 0s. Cada vez que aparezca un número i, verifique que la casilla i del arreglo sea igual a 0, luego márquela con un '1'. Si la casilla es '1' quiere decir que el número ya estaba marcado por lo que la fla/columna/submatriz no es válida.
 
+*/
+
 int is_valid(Node* n){
   int fila[10] = {0}; 
   int columna[10] = {0}; 
   int submatriz[10] = {0}; 
 
-  for (int i = 0; i < 9; i++) 
+    for (int i = 0; i < 9; i++) 
   {
     if (fila[n -> sudo[i][j]] == 1)
     {
@@ -86,60 +88,6 @@ int is_valid(Node* n){
   }
   
     // Recorrer las submatrices de 3x3
-  for (int i = 0; i < 9; i += 3) 
-  {
-    for (int j = 0; j < 9; j += 3) 
-    {
-      if (submatriz[n -> sudo[i][j]] == 1)
-      {
-        return 0;
-      } 
-      else 
-      {
-        submatriz[n -> sudo[i][j]] = 1;
-      }
-      
-    }
-  }
-
-  return 1; 
-  
-}
-
-*/
-
-int is_valid(Node* n){
-  int fila[10] = {0}; 
-  int columna[10] = {0}; 
-  int submatriz[10] = {0}; 
-
-  for (int i = 0; i < 9; i++) 
-  {
-    for (int j = 0 ; j < 9 ; j++)
-    {
-      if (fila[n -> sudo[i][j]] == 1)
-      {
-        return 0;
-      }
-      else
-      {
-        fila[n -> sudo[i][j]] = 1;
-      }
-
-      if (columna[n -> sudo[0][j]] == 1)
-      {
-      return 0;
-      }
-      else
-      {
-        columna[n -> sudo[0][j]] = 1;
-      }
-
-    }
-
-  }
-
-  // Recorrer las submatrices de 3x3
   for (int i = 0; i < 9; i += 3) 
   {
     for (int j = 0; j < 9; j += 3) 
