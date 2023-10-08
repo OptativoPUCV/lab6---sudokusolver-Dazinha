@@ -116,36 +116,52 @@ int is_valid(Node* n){
   
   int verificador[10] = {0}; 
 
-  
-  // Verificar filas y columnas
-  for (int i = 0; i < 9; i++) {
-    for (int j = 0; j < 9; j++) {
+  //verifiquemos filas y col
+  for (int i = 0; i < 9; i++) 
+  {
+    for (int j = 0; j < 9; j++) 
+    {
       int num = n->sudo[i][j];
-      if (num != 0) {
-        if (verificador[num] == 1) {
-          return 0; // Número repetido en la fila
+      
+      if (num != 0) 
+      {
+        //si está repetido
+        if (verificador[num] == 1) 
+        {
+          return 0; 
         }
+        
         verificador[num] = 1;
+        
       }
     }
     
-    // Reiniciar el arreglo used para la siguiente fila/columna
-    for (int k = 1; k <= 9; k++) {
+    //reinicio de arreglo
+    for (int k = 1; k <= 9; k++) 
+    {
       verificador[k] = 0;
     }
+    
   }
-
-  for (int i = 0; i < 9; i++) {
-    for (int j = 0; j < 9; j++) {
+/*
+  //revision en columnas
+  for (int i = 0; i < 9; i++) 
+  {
+    for (int j = 0; j < 9; j++) 
+    {
       int num = n->sudo[j][i];
-      if (num != 0) {
-        if (verificador[num] == 1) {
+      
+      if (num != 0) 
+      {
+        if (verificador[num] == 1) 
+        {
           return 0; // Número repetido en la columna
         }
+        
         verificador[num] = 1;
       }
     }
-    
+    */
     // Reiniciar el arreglo used para la siguiente fila/columna
     for (int k = 1; k <= 9; k++) {
       verificador[k] = 0;
