@@ -54,17 +54,26 @@ Si el estado es válido la función retorna 1, si no lo es retorna 0.
 
 > Para marcar los números que vayan apareciendo en una fila/columna/submatriz puede usar un arreglo de enteros de largo 10 inicializado con 0s. Cada vez que aparezca un número i, verifique que la casilla i del arreglo sea igual a 0, luego márquela con un '1'. Si la casilla es '1' quiere decir que el número ya estaba marcado por lo que la fla/columna/submatriz no es válida.
 
-int used[10];
+
+int is_valid(Node* n){
+
+  int used[10];
 
   // Verificar filas y columnas
-  for (int i = 0; i < 9; i++) {
+  for (int i = 0; i < 9; i++) 
+  {
     memset(used, 0, sizeof(used)); // Reiniciar el arreglo used
-    for (int j = 0; j < 9; j++) {
+    used[10] = 0;
+    for (int j = 0; j < 9; j++) 
+    {
       int num = n->sudo[i][j];
-      if (num != 0) {
-        if (used[num] == 1) {
+      if (num != 0) 
+      {
+        if (used[num] == 1) 
+        {
           return 0; // Número repetido en la fila
         }
+        
         used[num] = 1;
       }
     }
@@ -80,6 +89,7 @@ int used[10];
       }
     }
   }
+}
 
   // Verificar submatrices de 3x3
   for (int row = 0; row < 9; row += 3) {
@@ -104,80 +114,64 @@ int used[10];
 
 int is_valid(Node* n){
   
-  int verificador_fil[10] = {0}; 
+  int verificador[10] = {0}; 
 
-  //verificar filas y columnas
-  for (int i = 0; i < 9; i++) 
-  {
-    for (int j = 0; j < 9; j++) 
-    {
-      int num = n -> sudo[i][j];
-      
-      if (num != 0) 
-      {
-        
-        if (verificador_fil[num] == 1) 
-        {
+  
+  // Verificar filas y columnas
+  for (int i = 0; i < 9; i++) {
+    for (int j = 0; j < 9; j++) {
+      int num = n->sudo[i][j];
+      if (num != 0) {
+        if (verificador[num] == 1) {
           return 0; // Número repetido en la fila
         }
-        verificador_fil[num] = 1;
+        verificador[num] = 1;
       }
-    }
-  }
-
-  //reiniciar arreglo
-  int verificador_col[10] = {0};
-
-  // Verificar columnas
-  for (int i = 0; i < 9; i++) 
-  {
-    for (int j = 0; j < 9; j++)
-    {
-      int num = n->sudo[j][i];
-      if (num != 0) 
-      {
-        
-        if (verificador_col[num] == 1) 
-        {
-          return 0; // Número repetido en la columna
-        }
-        
-        verificador_col[num] = 1;
-      }
-    }
-  }
-
-  int verificador_subm[10] = {0};
-
-  // Verificar submatrices de 3x3
-  for (int fila = 0; fila < 9; fila += 3) 
-  {
-    for (int col = 0; col < 9; col += 3) 
-    {
-      for (int i = fila; i < fila + 3; i++) 
-      {
-        for (int j = col; j < col + 3; j++) 
-        {
-          int num = n->sudo[i][j];
-          
-          if (num != 0) 
-          {
-            
-            if (verificador_subm[num] == 1) 
-            {
-              return 0; // Número repetido en la submatriz
-            }
-            
-            verificador_subm[num] = 1;
-            
-          }
-          
-        }
-        
-      }
-      
     }
     
+    // Reiniciar el arreglo used para la siguiente fila/columna
+    for (int k = 1; k <= 9; k++) {
+      verificador[k] = 0;
+    }
+  }
+
+  for (int i = 0; i < 9; i++) {
+    for (int j = 0; j < 9; j++) {
+      int num = n->sudo[j][i];
+      if (num != 0) {
+        if (verificador[num] == 1) {
+          return 0; // Número repetido en la columna
+        }
+        verificador[num] = 1;
+      }
+    }
+    
+    // Reiniciar el arreglo used para la siguiente fila/columna
+    for (int k = 1; k <= 9; k++) {
+      verificador[k] = 0;
+    }
+  }
+
+  // Verificar submatrices de 3x3
+  for (int row = 0; row < 9; row += 3) {
+    for (int col = 0; col < 9; col += 3) {
+      for (int i = row; i < row + 3; i++) {
+        for (int j = col; j < col + 3; j++) {
+          int num = n->sudo[i][j];
+          if (num != 0) {
+            if (verificador[num] == 1) {
+              return 0; // Número repetido en la submatriz
+            }
+            verificador[num] = 1;
+          }
+        }
+      }
+      
+      // Reiniciar el arreglo used para la siguiente submatriz
+      for (int k = 1; k <= 9; k++) {
+        verificador[k] = 0;
+      }
+    }
   }
   
   return 1; 
