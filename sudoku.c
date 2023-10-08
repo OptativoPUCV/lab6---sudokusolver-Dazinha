@@ -113,31 +113,34 @@ int is_valid(Node* n){
   int columna[10] = {0}; 
   int submatriz[10] = {0}; 
 
-    for (int i = 0; i < 9; i++) 
+  for (int i = 0; i < 9; i++) 
   {
-    if (fila[n -> sudo[i][j]] == 1)
+    for (int j = 0 ; j < 9 ; j++)
     {
+      if (fila[n -> sudo[i][j]] == 1)
+      {
+        return 0;
+      }
+      else
+      {
+        fila[n -> sudo[i][j]] = 1;
+      }
+
+      if (columna[n -> sudo[0][j]] == 1)
+      {
       return 0;
+      }
+      else
+      {
+        columna[n -> sudo[0][j]] = 1;
+      }
+
+
+      
     }
-    else
-    {
-      fila[n -> sudo[i][j]] = 1;
-    }
+
   }
 
-  
-  
-  for (int j = 0; j < 9; j++) 
-  {
-    if (columna[n -> sudo[0][j]] == 1)
-    {
-      return 0;
-    }
-    else
-    {
-      columna[n -> sudo[0][j]] = 1;
-    }
-  }
   
     // Recorrer las submatrices de 3x3
   for (int i = 0; i < 9; i += 3) 

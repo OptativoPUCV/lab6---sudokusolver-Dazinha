@@ -1112,3 +1112,9 @@ sudoku.c:112:7: error: variable ‘fila’ set but not used [-Werror=unused-but-
 cc1: all warnings being treated as errors
 Compilation failed
 31f3f67
+Sun 08 Oct 2023 02:44:15 AM UTC: 
+ sudoku.c | 13 ++++++++-----
+ 1 file changed, 8 insertions(+), 5 deletions(-)
+ tests:  1|4
+total_score: 10/70
+4823771
