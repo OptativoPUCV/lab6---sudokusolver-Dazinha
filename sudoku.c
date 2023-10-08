@@ -286,7 +286,7 @@ Node* DFS(Node* initial, int* cont){
 
     }
     //Libere la memoria usada por el nodo.
-    clean(adj_node);
+    clean(adj_nodes);
     
   }
 
