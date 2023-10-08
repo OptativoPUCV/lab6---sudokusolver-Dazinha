@@ -166,7 +166,7 @@ int is_valid(Node* n){
     for (int k = 1; k <= 9; k++) {
       verificador[k] = 0;
     }
-  }
+  
 
   // Verificar submatrices de 3x3
   for (int row = 0; row < 9; row += 3) {
