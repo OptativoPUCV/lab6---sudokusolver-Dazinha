@@ -58,53 +58,48 @@ Si el estado es válido la función retorna 1, si no lo es retorna 0.
 
 int is_valid(Node* n){
   
-  int fila[10] = {0}; 
-  int columna[10] = {0}; 
-  int submatriz[10] = {0}; 
+  int used[10] = {0}; 
 
-  for (int i = 0; i < 9; i++) 
-  {
-    for (int j = 0; j < 9; j++) 
-    {
-      
-      int num = n -> sudo[i][j];
-
-      if (fila[num] == 1) 
-      {
-        return 0;
-      } 
-
-
-      if (columna[num] == 1) 
-      {
-        return 0;
-      }  
-
-
-      int submatriz_fila = (i / 3) * 3;
-      int submatriz_columna = (j / 3) * 3;
-
-      for (int k = submatriz_fila; k < submatriz_fila + 3; k++) 
-      {
-        for (int l = submatriz_columna; l < submatriz_columna + 3; l++) 
-        {
-          int num = n->sudo[k][l];
-          
-          if (submatriz[num] == 1) 
-          {
-            return 0;
-          }
-          
+    // Verificar filas y columnas
+  for (int i = 0; i < 9; i++) {
+    memset(used, 0, sizeof(used)); // Reiniciar el arreglo used
+    for (int j = 0; j < 9; j++) {
+      int num = n->sudo[i][j];
+      if (num != 0) {
+        if (used[num] == 1) {
+          return 0; // Número repetido en la fila
         }
-        
+        used[num] = 1;
       }
+    }
 
-      // Marcar los números como utilizados después de verificar
-      fila[num] = 1;
-      columna[num] = 1;
-      submatriz[num] = 1;
+    memset(used, 0, sizeof(used)); // Reiniciar el arreglo used
+    for (int j = 0; j < 9; j++) {
+      int num = n->sudo[j][i];
+      if (num != 0) {
+        if (used[num] == 1) {
+          return 0; // Número repetido en la columna
+        }
+        used[num] = 1;
+      }
+    }
+  }
 
-      
+  // Verificar submatrices de 3x3
+  for (int row = 0; row < 9; row += 3) {
+    for (int col = 0; col < 9; col += 3) {
+      memset(used, 0, sizeof(used)); // Reiniciar el arreglo used
+      for (int i = row; i < row + 3; i++) {
+        for (int j = col; j < col + 3; j++) {
+          int num = n->sudo[i][j];
+          if (num != 0) {
+            if (used[num] == 1) {
+              return 0; // Número repetido en la submatriz
+            }
+            used[num] = 1;
+          }
+        }
+      }
     }
   }
   
