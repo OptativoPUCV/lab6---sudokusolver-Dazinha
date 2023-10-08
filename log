@@ -1401,3 +1401,29 @@ Sun 08 Oct 2023 09:32:37 PM UTC:
  tests:  3|3
 total_score: 25/70
 111d2a0
+Sun 08 Oct 2023 09:34:16 PM UTC: 
+ sudoku.c | 24 ++++++++++++++++++++----
+ 1 file changed, 20 insertions(+), 4 deletions(-)
+In file included from test.c:5:
+sudoku.c:172:3: error: expected identifier or ‘(’ before ‘for’
+  172 |   for (int row = 0; row < 9; row += 3) {
+      |   ^~~
+sudoku.c:172:25: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘<’ token
+  172 |   for (int row = 0; row < 9; row += 3) {
+      |                         ^
+sudoku.c:172:34: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘+=’ token
+  172 |   for (int row = 0; row < 9; row += 3) {
+      |                                  ^~
+sudoku.c:193:3: error: expected identifier or ‘(’ before ‘return’
+  193 |   return 1;
+      |   ^~~~~~
+sudoku.c:195:1: error: expected identifier or ‘(’ before ‘}’ token
+  195 | }
+      | ^
+sudoku.c: In function ‘is_valid’:
+sudoku.c:169:3: error: control reaches end of non-void function [-Werror=return-type]
+  169 |   }
+      |   ^
+cc1: all warnings being treated as errors
+Compilation failed
+b059401
