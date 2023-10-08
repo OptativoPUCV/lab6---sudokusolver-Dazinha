@@ -143,30 +143,14 @@ int is_valid(Node* n){
     }
     
   }
-/*
-  //revision en columnas
-  for (int i = 0; i < 9; i++) 
+
+   /*
+  //reinicio de arreglo  
+  for (int k = 1; k <= 9; k++) 
   {
-    for (int j = 0; j < 9; j++) 
-    {
-      int num = n->sudo[j][i];
-      
-      if (num != 0) 
-      {
-        if (verificador[num] == 1) 
-        {
-          return 0; // Número repetido en la columna
-        }
-        
-        verificador[num] = 1;
-      }
-    }
-    */
-    // Reiniciar el arreglo used para la siguiente fila/columna
-    for (int k = 1; k <= 9; k++) {
-      verificador[k] = 0;
-    }
-  
+    verificador[k] = 0;
+  }
+  */
 
   // Verificar submatrices de 3x3
   for (int row = 0; row < 9; row += 3) {
