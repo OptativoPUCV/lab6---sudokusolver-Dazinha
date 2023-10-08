@@ -57,19 +57,19 @@ Si el estado es válido la función retorna 1, si no lo es retorna 0.
 
 
 int is_valid(Node* n){
+  
+  int verificador[10] = {0}; 
 
   //verifiquemos filas y col
   for (int i = 0; i < 9; i++) 
   {
-    int verificador_fila[10] = {0}; // Arreglo temporal para la fila
-    int verificador_col[10] = {0};  
     for (int j = 0; j < 9; j++) 
     {
       int num = n->sudo[i][j];
       
       if (num != 0) 
       {
-        //si está repetido
+        //si está marcado
         if (verificador[num] == 1) 
         {
           return 0; 
@@ -100,9 +100,10 @@ int is_valid(Node* n){
           int num = n->sudo[i][j];
           if (num != 0) 
           {
+            //si esta marcado
             if (verificador[num] == 1)
             {
-              return 0; // Número repetido en la submatriz
+              return 0;
             }
             verificador[num] = 1;
           }
@@ -152,8 +153,8 @@ List* get_adj_nodes(Node* n){
                 
                 Node *ady_node = copy(n);
                 ady_node -> sudo[i][j] = k; //cambio el 0
-                //pushBack(list, ady_node);
-               
+                pushBack(list, ady_node);
+               /*
                 if (is_valid(ady_node) == 1)
                 {
                   pushBack(list, ady_node);
@@ -162,7 +163,7 @@ List* get_adj_nodes(Node* n){
                 {
                   free(ady_node); 
                 }
-                
+                */
               
               }
 

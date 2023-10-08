@@ -1464,3 +1464,9 @@ sudoku.c:64:9: error: unused variable ‘verificador_fila’ [-Werror=unused-var
 cc1: all warnings being treated as errors
 Compilation failed
 8b059c5
+Sun 08 Oct 2023 09:55:58 PM UTC: 
+ sudoku.c | 15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
+ tests:  6|2
+total_score: 45/70
+6315039
