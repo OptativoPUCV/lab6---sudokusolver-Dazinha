@@ -140,7 +140,7 @@ List* get_adj_nodes(Node* n){
           if (n -> sudo[i][j] == 0) //si tengo un 0
           {
             
-            for (int k = 1 ; k <= 9 ; k++)
+            for (int k = 0; k <= 9 ; k++)
               {
                 
                 Node *ady_node = copy(n);
