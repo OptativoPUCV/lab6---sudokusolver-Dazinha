@@ -61,19 +61,24 @@ int is_valid(Node* n){
   int used[10] = {0}; 
 
     // Verificar filas y columnas
-  for (int i = 0; i < 9; i++) {
-    memset(used, 0, sizeof(used)); // Reiniciar el arreglo used
-    for (int j = 0; j < 9; j++) {
+  for (int i = 0; i < 9; i++) 
+  {
+    //memset(used, 0, sizeof(used)); // Reiniciar el arreglo used
+    for (int j = 0; j < 9; j++) 
+    {
       int num = n->sudo[i][j];
-      if (num != 0) {
-        if (used[num] == 1) {
+      if (num != 0) 
+      {
+        if (used[num] == 1) 
+        {
           return 0; // Número repetido en la fila
         }
+        
         used[num] = 1;
       }
     }
 
-    memset(used, 0, sizeof(used)); // Reiniciar el arreglo used
+    //memset(used, 0, sizeof(used)); // Reiniciar el arreglo used
     for (int j = 0; j < 9; j++) {
       int num = n->sudo[j][i];
       if (num != 0) {
@@ -88,7 +93,7 @@ int is_valid(Node* n){
   // Verificar submatrices de 3x3
   for (int row = 0; row < 9; row += 3) {
     for (int col = 0; col < 9; col += 3) {
-      memset(used, 0, sizeof(used)); // Reiniciar el arreglo used
+      //memset(used, 0, sizeof(used)); // Reiniciar el arreglo used
       for (int i = row; i < row + 3; i++) {
         for (int j = col; j < col + 3; j++) {
           int num = n->sudo[i][j];
