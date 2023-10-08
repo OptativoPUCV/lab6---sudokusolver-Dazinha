@@ -87,18 +87,26 @@ int is_valid(Node* n){
         columna[n -> sudo[0][j]] = 1;
       }
 
-      for (int k = 0 ; k < 9 ; k++)
+      int submatriz_fila = (i / 3) * 3;
+      int submatriz_columna = (j / 3) * 3;
+
+      for (int k = submatriz_fila; k < submatriz_fila + 3; k++) 
       {
-        if (submatriz[n -> sudo[i][j]] == 1)
+        for (int l = submatriz_columna; l < submatriz_columna + 3; l++) 
         {
-          return 0;
-        } 
-        else 
-        {
-          submatriz[n -> sudo[i][j]] = 1;
+          int num = n->sudo[k][l];
+          if (submatriz[num] == 1) 
+          {
+            return 0;
+          } 
+          else 
+          {
+            submatriz[num] = 1;
+          }
         }
+      }
+
       
-        }
     }
   }
       
