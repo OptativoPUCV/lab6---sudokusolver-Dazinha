@@ -135,14 +135,11 @@ int is_valid(Node* n){
         columna[n -> sudo[0][j]] = 1;
       }
 
-
-      
     }
 
   }
 
-  
-    // Recorrer las submatrices de 3x3
+  // Recorrer las submatrices de 3x3
   for (int i = 0; i < 9; i += 3) 
   {
     for (int j = 0; j < 9; j += 3) 
@@ -181,8 +178,6 @@ List* get_adj_nodes(Node* n){
     y agréguelos a la lista
   */
 
-  //Node *aux_node  = copy(n);
-
   for (int i = 0 ; i < 9 ; i++)
     {
       for (int j = 0 ; j < 9 ; j++)
@@ -195,14 +190,14 @@ List* get_adj_nodes(Node* n){
                 
                 Node *ady_node = copy(n);
                 ady_node -> sudo[i][j] = k; //cambio el 0
-                //pushBack(list, ady_node);
-                
+                pushBack(list, ady_node);
+                /*
                 if (is_valid(ady_node) == 1)
                 {
                   pushBack(list, ady_node);
                 
                 }
-                
+                */
               
               }
 
