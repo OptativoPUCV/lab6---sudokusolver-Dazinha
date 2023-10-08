@@ -96,13 +96,13 @@ int is_valid(Node* n){
         for (int l = submatriz_columna; l < submatriz_columna + 3; l++) 
         {
           int num = n->sudo[k][l];
-          if (submatriz[num] == 1) 
+          if (submatriz[k] == 1) 
           {
             return 0;
           } 
           else 
           {
-            submatriz[num] = 1;
+            submatriz[k] = 1;
           }
         }
       }
