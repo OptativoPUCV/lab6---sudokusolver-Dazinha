@@ -149,24 +149,25 @@ List* get_adj_nodes(Node* n){
           {
             
             for (int k = 1; k <= 9 ; k++)
-              {
+            {
                 
-                Node *ady_node = copy(n);
-                ady_node -> sudo[i][j] = k; //cambio el 0
-                //pushBack(list, ady_node);
+              Node *ady_node = copy(n);
+              ady_node -> sudo[i][j] = k; //cambio el 0
+              //pushBack(list, ady_node);
                
-                if (is_valid(ady_node) == 1)
-                {
-                  pushBack(list, ady_node);
-                }
-                else
-                {
-                  free(ady_node); 
-                }
-                
-                return list;
+              if (is_valid(ady_node) == 1)
+              {
+                pushBack(list, ady_node);
               }
+              else
+              {
+                free(ady_node); 
+              }
+                
+              
+            }
 
+            return list;
           
           }
         }
